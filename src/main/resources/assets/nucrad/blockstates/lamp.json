@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "facing=north,half=lower": { "model": "nucrad:block/lamp" },
+    "facing=south,half=lower": { "model": "nucrad:block/lamp", "y": 180 },
+    "facing=west,half=lower": { "model": "nucrad:block/lamp", "y": 270 },
+    "facing=east,half=lower": { "model": "nucrad:block/lamp", "y": 90 },
+
+    "facing=north,half=upper": { "model": "nucrad:block/no_block" },
+    "facing=south,half=upper": { "model": "nucrad:block/no_block", "y": 180 },
+    "facing=west,half=upper": { "model": "nucrad:block/no_block", "y": 270 },
+    "facing=east,half=upper": { "model": "nucrad:block/no_block", "y": 90 }
+  }
+}

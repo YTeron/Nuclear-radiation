@@ -147,7 +147,7 @@ public class BarbedWire extends Block {
         return state;
     }
 
-    private boolean canConnect(BlockState state) {
+    public boolean canConnect(BlockState state) {
         return state.getBlock() == this;
     }
 
