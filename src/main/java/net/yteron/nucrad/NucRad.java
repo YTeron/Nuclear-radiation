@@ -35,12 +35,11 @@ public class NucRad
 
     public NucRad() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModEntityTypes.register(eventBus);
+
         Modblock.register(eventBus);
         ModItems.register(eventBus);
 
-        eventBus.addListener(ModEventBusEvents::addEntityAttributes);
-
+        ModEntityTypes.register(eventBus);
         // Register the setup method for modloading
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -62,10 +61,9 @@ public class NucRad
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
-        net.minecraftforge.fml.client.registry.RenderingRegistry.registerEntityRenderingHandler(
-                ModEntityTypes.BUFF_ZOMBIE.get(),
-                BuffZombieRenderer::new
-        );
+
+                RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BUFF_ZOMBIE.get(), BuffZombieRenderer::new);
+
         LOGGER.info("BuffZombie renderer registered!");
     }
 
