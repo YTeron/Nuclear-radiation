@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yteron.nucrad.NucRad;
 import net.yteron.nucrad.block.BarbedWire;
+import net.yteron.nucrad.block.IronFencee;
 import net.yteron.nucrad.block.Lamp;
 import net.yteron.nucrad.block.WallWire;
 
@@ -15,11 +16,13 @@ public class Modblock {
     public static final RegistryObject<Block> BARBEDWIRE;
     public static final RegistryObject<Block> WALL_WIRE;
     public static final RegistryObject<Block> LAMP;
+    public static final RegistryObject<Block> IRONFENCEE;
     static {
         REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, NucRad.MOD_ID);
         BARBEDWIRE = REGISTRY.register("barbedwire",()-> new BarbedWire());
         WALL_WIRE = REGISTRY.register("wall_provolka",()-> new WallWire());
         LAMP = REGISTRY.register("lamp",()-> new Lamp());
+        IRONFENCEE = REGISTRY.register("ironfencee",()-> new IronFencee());
 
     }
 

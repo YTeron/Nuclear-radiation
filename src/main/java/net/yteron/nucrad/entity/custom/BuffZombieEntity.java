@@ -39,7 +39,7 @@ public class BuffZombieEntity extends ZombieEntity {
                 .add(Attributes.MAX_HEALTH, 20.0D)      // <-- ИСПРАВЛЕНО: createMutableAttribute → add
                 .add(Attributes.MOVEMENT_SPEED, 0.33D)
                 .add(Attributes.ATTACK_DAMAGE, 13.0D)
-                .add(Attributes.FOLLOW_RANGE, 150.0D)
+                .add(Attributes.FOLLOW_RANGE, 1500.0D)
                 .add(Attributes.ATTACK_KNOCKBACK,5.0D)
                 .add(Attributes.SPAWN_REINFORCEMENTS_CHANCE,0.2D); // <-- УДАЛЕНО (не существует в 1.16.5)
 

@@ -17,6 +17,7 @@ public class ModItems {
     public static final RegistryObject<Item> METAL_WEB;
     public static final RegistryObject<Item> BARBEDWIRE;
     public static final RegistryObject<Item> WALL_WIRE;
+    public static final RegistryObject<Item> IRONFENCEE;
     public static final RegistryObject<Item> LAMP;
     public static final RegistryObject<Item> BUFF_ZOMBIE_SPAWN_EGG;
 
@@ -37,6 +38,10 @@ public class ModItems {
         LAMP = ITEMS.register("lamp",
                 () -> new BlockItem(Modblock.LAMP.get(),
                         new Item.Properties().tab(ModTabs.NUCRAD)));
+        IRONFENCEE = ITEMS.register("ironfenceei",
+                () -> new BlockItem(Modblock.IRONFENCEE.get(),
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
+
         BUFF_ZOMBIE_SPAWN_EGG = ITEMS.register("buff_zombie_spawn_egg",
                 () -> new ModSpawnEggItem(ModEntityTypes.BUFF_ZOMBIE,
                         0x666666,  // Цвет 1

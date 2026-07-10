@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "east=false,north=false,south=false,west=false": { "model": "nucrad:block/ironfencee/ironfencee" },
+    "east=true,north=false,south=false,west=false": { "model": "nucrad:block/ironfencee/ironfencee_e" },
+    "east=false,north=false,south=true,west=false": { "model": "nucrad:block/ironfencee/ironfencee_s" },
+    "east=false,north=true,south=false,west=false": { "model": "nucrad:block/ironfencee/ironfencee_n" },
+    "east=false,north=false,south=false,west=true": { "model": "nucrad:block/ironfencee/ironfencee_w" },
+    "east=true,north=false,south=true,west=false": { "model": "nucrad:block/ironfencee/ironfencee_se" },
+    "east=true,north=true,south=false,west=false": { "model": "nucrad:block/ironfencee/ironfencee_ne" },
+    "east=true,north=false,south=false,west=true": { "model": "nucrad:block/ironfencee/ironfencee_we" },
+    "east=false,north=true,south=false,west=true": { "model": "nucrad:block/ironfencee/ironfencee_nw" },
+    "east=false,north=false,south=true,west=true": { "model": "nucrad:block/ironfencee/ironfencee_sw" },
+    "east=true,north=true,south=true,west=false": { "model": "nucrad:block/ironfencee/ironfencee_nse" },
+    "east=true,north=true,south=false,west=true": { "model": "nucrad:block/ironfencee/ironfencee_new" },
+    "east=true,north=false,south=true,west=true": { "model": "nucrad:block/ironfencee/ironfencee_sew" },
+    "east=false,north=true,south=true,west=true": { "model": "nucrad:block/ironfencee/ironfencee_nsw" },
+    "east=true,north=true,south=true,west=true": { "model": "nucrad:block/ironfencee/ironfencee_nsew" },
+
+    "east=false,north=true,south=true,west=false": { "model": "nucrad:block/ironfencee/ironfencee_ns" }
+  }
+}
