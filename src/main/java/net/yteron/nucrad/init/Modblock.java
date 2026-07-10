@@ -20,6 +20,7 @@ public class Modblock {
         BARBEDWIRE = REGISTRY.register("barbedwire",()-> new BarbedWire());
         WALL_WIRE = REGISTRY.register("wall_provolka",()-> new WallWire());
         LAMP = REGISTRY.register("lamp",()-> new Lamp());
+
     }
 
     public static void register(IEventBus eventBus) {
