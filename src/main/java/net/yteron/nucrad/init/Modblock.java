@@ -6,10 +6,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yteron.nucrad.NucRad;
-import net.yteron.nucrad.block.BarbedWire;
-import net.yteron.nucrad.block.IronFencee;
-import net.yteron.nucrad.block.Lamp;
-import net.yteron.nucrad.block.WallWire;
+import net.yteron.nucrad.block.*;
 
 public class Modblock {
     public static final DeferredRegister<Block> REGISTRY;
@@ -17,13 +14,21 @@ public class Modblock {
     public static final RegistryObject<Block> WALL_WIRE;
     public static final RegistryObject<Block> LAMP;
     public static final RegistryObject<Block> IRONFENCEE;
+    public static final RegistryObject<Block> CONCERETE_MIXER;
+    public static final RegistryObject<Block> DEAD_SAND;
+    public static final RegistryObject<Block> DEAD_EARH;
+    public static final RegistryObject<Block> CONCERETE_DEFEAT;
+
     static {
         REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, NucRad.MOD_ID);
         BARBEDWIRE = REGISTRY.register("barbedwire",()-> new BarbedWire());
         WALL_WIRE = REGISTRY.register("wall_provolka",()-> new WallWire());
         LAMP = REGISTRY.register("lamp",()-> new Lamp());
         IRONFENCEE = REGISTRY.register("ironfencee",()-> new IronFencee());
-
+        DEAD_SAND = REGISTRY.register("dead_sand",()-> new DeadSand());
+        DEAD_EARH = REGISTRY.register("dead_earth",()-> new DeadEarth());
+        CONCERETE_MIXER = REGISTRY.register("concrete_mixer",()-> new ConcereteMixer());
+        CONCERETE_DEFEAT = REGISTRY.register("concerete_defeat",()-> new ConcereteDefeat());
     }
 
     public static void register(IEventBus eventBus) {

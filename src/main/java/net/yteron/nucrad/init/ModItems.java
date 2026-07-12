@@ -19,6 +19,10 @@ public class ModItems {
     public static final RegistryObject<Item> WALL_WIRE;
     public static final RegistryObject<Item> IRONFENCEE;
     public static final RegistryObject<Item> LAMP;
+    public static final RegistryObject<Item> CONCERETE_MIXER;
+    public static final RegistryObject<Item> CONCERETE_DEFEAT;
+    public static final RegistryObject<Item> DEAD_SAND;
+    public static final RegistryObject<Item> DEAD_EARTH;
     public static final RegistryObject<Item> BUFF_ZOMBIE_SPAWN_EGG;
 
     static {
@@ -41,6 +45,21 @@ public class ModItems {
         IRONFENCEE = ITEMS.register("ironfenceei",
                 () -> new BlockItem(Modblock.IRONFENCEE.get(),
                         new Item.Properties().tab(ModTabs.NUCRAD)));
+
+        DEAD_SAND = ITEMS.register("dead_sand",
+                () -> new BlockItem(Modblock.DEAD_SAND.get(),
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
+        DEAD_EARTH = ITEMS.register("dead_earth",
+                () -> new BlockItem(Modblock.DEAD_EARH.get(),
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
+        CONCERETE_MIXER = ITEMS.register("concrete_mixer",
+                () -> new BlockItem(Modblock.CONCERETE_MIXER.get(),
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
+
+        CONCERETE_DEFEAT = ITEMS.register("concerete_defeat",
+                () -> new BlockItem(Modblock.CONCERETE_DEFEAT.get(),
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
+
 
         BUFF_ZOMBIE_SPAWN_EGG = ITEMS.register("buff_zombie_spawn_egg",
                 () -> new ModSpawnEggItem(ModEntityTypes.BUFF_ZOMBIE,
