@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.yteron.nucrad.NucRad;
 import net.yteron.nucrad.block.block.*;
 import net.yteron.nucrad.block.machine.ConcereteMixer;
+import net.yteron.nucrad.block.machine.LightningChannelerBlock;
 import net.yteron.nucrad.block.structurblock.Lamp;
 
 public class Modblock {
@@ -15,6 +16,7 @@ public class Modblock {
     public static final RegistryObject<Block> BARBEDWIRE;
     public static final RegistryObject<Block> WALL_WIRE;
     public static final RegistryObject<Block> LAMP;
+    public static final RegistryObject<Block> LIGHTNING_CHANNELER;
     public static final RegistryObject<Block> IRONFENCEE;
     public static final RegistryObject<Block> CONCERETE_MIXER;
     public static final RegistryObject<Block> DEAD_SAND;
@@ -24,6 +26,7 @@ public class Modblock {
     static {
         REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, NucRad.MOD_ID);
         BARBEDWIRE = REGISTRY.register("barbedwire",()-> new BarbedWire());
+        LIGHTNING_CHANNELER = REGISTRY.register("li",()-> new LightningChannelerBlock());
         WALL_WIRE = REGISTRY.register("wall_provolka",()-> new WallWire());
         LAMP = REGISTRY.register("lamp",()-> new Lamp());
         IRONFENCEE = REGISTRY.register("ironfencee",()-> new IronFencee());

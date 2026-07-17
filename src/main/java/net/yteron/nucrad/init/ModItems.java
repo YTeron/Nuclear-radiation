@@ -15,6 +15,8 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, NucRad.MOD_ID);
     public static final RegistryObject<Item> METALP;
     public static final RegistryObject<Item> METAL_WEB;
+    public static final RegistryObject<Item> CONCP;
+    public static final RegistryObject<Item> LIGHT;
     public static final RegistryObject<Item> BARBEDWIRE;
     public static final RegistryObject<Item> WALL_WIRE;
     public static final RegistryObject<Item> IRONFENCEE;
@@ -29,6 +31,11 @@ public class ModItems {
         // Точный порядок регистрации
         METALP = ITEMS.register("a_metalp",
                 () -> new Item(new Item.Properties().tab(ModTabs.NUCRAD)));
+        CONCP = ITEMS.register("a_concp",
+                () -> new Item(new Item.Properties().tab(ModTabs.NUCRAD)));
+        LIGHT = ITEMS.register("aaaaaa",
+                () -> new BlockItem(Modblock.LIGHTNING_CHANNELER.get(),
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
 
         METAL_WEB = ITEMS.register("ab_metalweb",
                 () -> new Item(new Item.Properties().tab(ModTabs.NUCRAD)));

@@ -19,7 +19,9 @@ import net.yteron.nucrad.block.machine.recipe.ModRecipes;
 import net.yteron.nucrad.entity.ModEntityTypes;
 import net.yteron.nucrad.entity.render.BuffZombieRenderer;
 import net.yteron.nucrad.entity.render.LargoRenderer;
-import net.yteron.nucrad.events.ModEventBusEvents;
+import net.yteron.nucrad.gui.init.ModContainers;
+import net.yteron.nucrad.gui.init.ModScreens;
+import net.yteron.nucrad.gui.init.ModTileEntities;
 import net.yteron.nucrad.init.ModItems;
 import net.yteron.nucrad.init.Modblock;
 import org.apache.logging.log4j.LogManager;
@@ -40,7 +42,9 @@ public class NucRad
 
         Modblock.register(eventBus);
         ModItems.register(eventBus);
+        ModTileEntities.register(eventBus);
         ModRecipes.register(eventBus);
+        ModContainers.register(eventBus);
 
         ModEntityTypes.register(eventBus);
         // Register the setup method for modloading
@@ -69,6 +73,8 @@ public class NucRad
                 RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BUFF_ZOMBIE.get(), BuffZombieRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.LARGO.get(), LargoRenderer::new);
         LOGGER.info("BuffZombie renderer registered!");
+        ModScreens.registerScreens(event);
+        LOGGER.info("Screens registered!");
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
