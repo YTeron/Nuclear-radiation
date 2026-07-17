@@ -1,4 +1,4 @@
-package net.yteron.nucrad.block;
+package net.yteron.nucrad.block.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

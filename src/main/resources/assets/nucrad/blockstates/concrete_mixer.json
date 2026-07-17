@@ -1,8 +1,5 @@
 {
   "variants": {
-    "facing=north": { "model": "nucrad:block/concrete_mixer" },
-    "facing=south": { "model": "nucrad:block/concrete_mixer", "y": 180 },
-    "facing=west": { "model": "nucrad:block/concrete_mixer", "y": 270 },
-    "facing=east": { "model": "nucrad:block/concrete_mixer", "y": 90 }
+    "": {"model": "nucrad:block/concrete_mixer"}
   }
 }

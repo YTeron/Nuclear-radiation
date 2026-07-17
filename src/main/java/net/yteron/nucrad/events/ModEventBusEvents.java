@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.yteron.nucrad.NucRad;
 import net.yteron.nucrad.entity.ModEntityTypes;
 import net.yteron.nucrad.entity.custom.BuffZombieEntity;
+import net.yteron.nucrad.entity.custom.LargoEntity;
 import net.yteron.nucrad.init.ModSpawnEggItem;
 
 
@@ -16,7 +17,9 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void addEntityAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntityTypes.BUFF_ZOMBIE.get(), BuffZombieEntity.setCustomAttributes().build());
+        event.put(ModEntityTypes.LARGO.get(), LargoEntity.setCustomAttributes().build());
         }
+
     @SubscribeEvent
     public static void onRegisterEntities(RegistryEvent.Register<EntityType<?>> event) {
         ModSpawnEggItem.initSpawnEggs();

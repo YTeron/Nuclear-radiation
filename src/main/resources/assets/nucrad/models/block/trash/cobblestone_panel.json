@@ -1,0 +1,11 @@
+{
+  "parent": "forge:block/default",
+  "loader": "forge:obj",
+  "model": "nucrad:models/block/cmmm.obj",
+  "flip-v": true,
+  "textures":
+  {
+  "particle": "block/cobblestone"
+  }
+
+}

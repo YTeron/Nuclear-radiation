@@ -1,4 +1,4 @@
-package net.yteron.nucrad.block;
+package net.yteron.nucrad.block.structurblock;
 
 import net.minecraft.block.*;
 import net.minecraft.entity.LivingEntity;

@@ -24,7 +24,7 @@ public class ModItems {
     public static final RegistryObject<Item> DEAD_SAND;
     public static final RegistryObject<Item> DEAD_EARTH;
     public static final RegistryObject<Item> BUFF_ZOMBIE_SPAWN_EGG;
-
+    public static final RegistryObject<Item> LARGO;
     static {
         // Точный порядок регистрации
         METALP = ITEMS.register("a_metalp",
@@ -63,6 +63,11 @@ public class ModItems {
 
         BUFF_ZOMBIE_SPAWN_EGG = ITEMS.register("buff_zombie_spawn_egg",
                 () -> new ModSpawnEggItem(ModEntityTypes.BUFF_ZOMBIE,
+                        0x666666,  // Цвет 1
+                        0xAAAAAA,  // Цвет 2
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
+        LARGO = ITEMS.register("largo_spawn_egg",
+                () -> new ModSpawnEggItem(ModEntityTypes.LARGO,
                         0x666666,  // Цвет 1
                         0xAAAAAA,  // Цвет 2
                         new Item.Properties().tab(ModTabs.NUCRAD)));

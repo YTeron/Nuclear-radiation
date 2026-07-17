@@ -15,8 +15,10 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.yteron.nucrad.block.machine.recipe.ModRecipes;
 import net.yteron.nucrad.entity.ModEntityTypes;
 import net.yteron.nucrad.entity.render.BuffZombieRenderer;
+import net.yteron.nucrad.entity.render.LargoRenderer;
 import net.yteron.nucrad.events.ModEventBusEvents;
 import net.yteron.nucrad.init.ModItems;
 import net.yteron.nucrad.init.Modblock;
@@ -38,6 +40,7 @@ public class NucRad
 
         Modblock.register(eventBus);
         ModItems.register(eventBus);
+        ModRecipes.register(eventBus);
 
         ModEntityTypes.register(eventBus);
         // Register the setup method for modloading
@@ -51,6 +54,7 @@ public class NucRad
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        //https://github.com/Warfactory-Official/Hbm-s-Nuclear-Tech-CE/tree/master/src/main/java/com/hbm/entity/mob
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -63,7 +67,7 @@ public class NucRad
     private void doClientStuff(final FMLClientSetupEvent event) {
 
                 RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BUFF_ZOMBIE.get(), BuffZombieRenderer::new);
-
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.LARGO.get(), LargoRenderer::new);
         LOGGER.info("BuffZombie renderer registered!");
     }
 

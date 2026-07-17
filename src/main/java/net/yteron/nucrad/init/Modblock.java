@@ -6,7 +6,9 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yteron.nucrad.NucRad;
-import net.yteron.nucrad.block.*;
+import net.yteron.nucrad.block.block.*;
+import net.yteron.nucrad.block.machine.ConcereteMixer;
+import net.yteron.nucrad.block.structurblock.Lamp;
 
 public class Modblock {
     public static final DeferredRegister<Block> REGISTRY;
