@@ -23,6 +23,13 @@ public class ModTileEntities {
                             Modblock.LIGHTNING_CHANNELER.get()
                     ).build(null)
             );
+    public static final RegistryObject<TileEntityType<ConcereteMixerTile>> CONCRETE_MIXER_TILE =
+            TILE_ENTITIES.register("conc_gui",
+                    () -> TileEntityType.Builder.of(
+                            ConcereteMixerTile::new,
+                            Modblock.CONCERETE_MIXER.get()
+                    ).build(null)
+            );
 
     public static void register(IEventBus eventBus) {
         TILE_ENTITIES.register(eventBus);

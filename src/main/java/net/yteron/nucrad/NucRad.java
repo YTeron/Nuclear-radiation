@@ -15,13 +15,13 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.yteron.nucrad.block.machine.recipe.ModRecipes;
 import net.yteron.nucrad.entity.ModEntityTypes;
 import net.yteron.nucrad.entity.render.BuffZombieRenderer;
 import net.yteron.nucrad.entity.render.LargoRenderer;
 import net.yteron.nucrad.gui.init.ModContainers;
 import net.yteron.nucrad.gui.init.ModScreens;
 import net.yteron.nucrad.gui.init.ModTileEntities;
+import net.yteron.nucrad.block.resipe.ModRecypeTypes;
 import net.yteron.nucrad.init.ModItems;
 import net.yteron.nucrad.init.Modblock;
 import org.apache.logging.log4j.LogManager;
@@ -43,8 +43,8 @@ public class NucRad
         Modblock.register(eventBus);
         ModItems.register(eventBus);
         ModTileEntities.register(eventBus);
-        ModRecipes.register(eventBus);
         ModContainers.register(eventBus);
+        ModRecypeTypes.register(eventBus);
 
         ModEntityTypes.register(eventBus);
         // Register the setup method for modloading
