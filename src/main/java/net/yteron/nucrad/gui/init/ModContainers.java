@@ -8,6 +8,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yteron.nucrad.NucRad;
+import net.yteron.nucrad.gui.container.ASimpleContainer;
 import net.yteron.nucrad.gui.container.LightningChannelerContainer;
 
 public class ModContainers {
@@ -23,6 +24,14 @@ public class ModContainers {
                         BlockPos pos = data.readBlockPos();
                         // ✅ Исправлено: inv.player.level вместо inv.player.getEntity()
                         return new LightningChannelerContainer(windowId, inv.player.level, pos, inv, inv.player);
+                    })
+            );
+    public static final RegistryObject<ContainerType<ASimpleContainer>> CONCERETE_CONTAINER =
+            CONTAINERS.register("concerete_channeler",
+                    () -> IForgeContainerType.create((windowId, inv, data) -> {
+                        BlockPos pos = data.readBlockPos();
+                        // ✅ Исправлено: inv.player.level вместо inv.player.getEntity()
+                        return new ASimpleContainer(windowId, inv.player.level, pos, inv, inv.player);
                     })
             );
 

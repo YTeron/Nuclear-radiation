@@ -11,6 +11,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.AbstractCookingRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
@@ -30,7 +31,7 @@ import net.yteron.nucrad.init.ModItems;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public abstract class ASimpleTile extends TileEntity implements ISidedInventory{
+public class ASimpleTile extends TileEntity implements ISidedInventory, ITickableTileEntity {
     private static final int[] SLOTS_FOR_UP = new int[]{0};
     private static final int[] SLOTS_FOR_DOWN = new int[]{1};
     private static final int[] SLOTS_FOR_SIDES = new int[]{2};
@@ -43,7 +44,10 @@ public abstract class ASimpleTile extends TileEntity implements ISidedInventory{
     private int cookingProgress;
     private int cookingTotalTime;
 
-    // Конструктор с параметром (для регистрации)
+    public ASimpleTile() {
+        this(ModTileEntities.A_SIMPLE_TILE.get(), ModRecypeTypes.CONCRETE_MIXER);
+    }
+
     public ASimpleTile(TileEntityType<?> tileEntityType, IRecipeType<ConcereteMixerRecipe> recipeType) {
         super(tileEntityType);
         this.cookingTotalTime = 200;
@@ -51,7 +55,7 @@ public abstract class ASimpleTile extends TileEntity implements ISidedInventory{
     }
 
 
-    // Создание инвентаря
+
     private ItemStackHandler createHandler() {
         return new ItemStackHandler(3) {
             @Override
@@ -112,6 +116,9 @@ public abstract class ASimpleTile extends TileEntity implements ISidedInventory{
         if (this.items.get(0).isEmpty()) {
             return false;
         }
+        if (this.items.get(1).isEmpty()) {
+            return false;
+        }
 
         // Проверяем рецепт
         ConcereteMixerRecipe recipe = this.getRecipe();
@@ -139,8 +146,10 @@ public abstract class ASimpleTile extends TileEntity implements ISidedInventory{
         if (recipe == null) return;
 
         ItemStack input = this.items.get(0);
-        ItemStack result = recipe.getResultItem();
+        ItemStack input2 = this.items.get(1);
         ItemStack output = this.items.get(2);
+        ItemStack result = recipe.getResultItem();
+
 
         if (output.isEmpty()) {
             this.items.set(2, result.copy());
@@ -149,6 +158,7 @@ public abstract class ASimpleTile extends TileEntity implements ISidedInventory{
         }
 
         input.shrink(1);
+        input2.shrink(1);
         this.setChanged();
     }
 
