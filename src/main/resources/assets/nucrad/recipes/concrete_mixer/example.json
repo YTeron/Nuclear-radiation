@@ -1,0 +1,18 @@
+{
+  "type": "nucrad:concrete_mixer",
+  "group": "concrete_mixer",
+  "ingredients": [
+    {
+      "item": "minecraft:sand"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "item": "minecraft:concrete_powder",
+    "count": 1
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

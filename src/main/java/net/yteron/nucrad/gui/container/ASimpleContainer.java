@@ -43,8 +43,8 @@ public class ASimpleContainer extends Container {
         if (tileEntity != null) {
             tileEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(h -> {
                 addSlot(new SlotItemHandler(h, 0, 80, 31));
-                addSlot(new SlotItemHandler(h, 1, 80, 53));
                 addSlot(new SlotItemHandler(h, 1, 80, 43));
+                addSlot(new SlotItemHandler(h, 2, 80, 59));
             });
         }
 
@@ -81,7 +81,7 @@ public class ASimpleContainer extends Container {
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 2;
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;
 
     @Override
     public ItemStack quickMoveStack(PlayerEntity player, int index) { // ✅ Исправлено имя метода
@@ -118,7 +118,10 @@ public class ASimpleContainer extends Container {
         return copyOfSourceStack;
     }
     @Override
-    public boolean stillValid(PlayerEntity p_75145_1_) {
-        return false;
+    public boolean stillValid(PlayerEntity player) {
+        return tileEntity != null && !tileEntity.isRemoved() &&
+                player.distanceToSqr(tileEntity.getBlockPos().getX() + 0.5D,
+                        tileEntity.getBlockPos().getY() + 0.5D,
+                        tileEntity.getBlockPos().getZ() + 0.5D) <= 64.0D;
     }
 }
