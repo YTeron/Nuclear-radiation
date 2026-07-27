@@ -38,12 +38,17 @@ public class ConcereteMixerRecipe implements IConcereteMixerRecipe{
     }
 
     @Override
-    public boolean matches(IInventory p_77569_1_, World p_77569_2_) {
-        return this.ingredient.test(p_77569_1_.getItem(0))&&this.tingredient.test(p_77569_1_.getItem(1));
+    public boolean matches(IInventory inv, World world) {
+
+        ItemStack slot0 = inv.getItem(0);
+        ItemStack slot1 = inv.getItem(1);
+        boolean match1 = this.ingredient.test(slot0);
+        boolean match2 = this.tingredient.test(slot1);
+        return match1 && match2;
     }
 
     @Override
-    public ItemStack assemble(IInventory p_77572_1_) {
+    public ItemStack assemble(IInventory inv) {
         return this.result.copy();
     }
     @Override
@@ -63,7 +68,7 @@ public class ConcereteMixerRecipe implements IConcereteMixerRecipe{
 
     @Override
     public ItemStack getResultItem() {
-        return this.result;
+        return this.result.copy();
     }
     public String getGroup() {
         return this.group;
@@ -127,21 +132,15 @@ public class ConcereteMixerRecipe implements IConcereteMixerRecipe{
         @Nullable
         @Override
         public ConcereteMixerRecipe fromNetwork(ResourceLocation recipeId, PacketBuffer buffer) {
-            // 1. Читаем группу
             String group = buffer.readUtf(32767);
 
-            // 2. Читаем ингредиенты (2 штуки)
             Ingredient ingredient1 = Ingredient.fromNetwork(buffer);
             Ingredient ingredient2 = Ingredient.fromNetwork(buffer);
 
-            // 3. Читаем результат
             ItemStack output = buffer.readItem();
-
-            // 4. Читаем опыт и время
             float experience = buffer.readFloat();
             int cookingTime = buffer.readVarInt();
 
-            // 5. Создаем рецепт
             return new ConcereteMixerRecipe(
                     ModRecipeTypes.LIGHTNING_RECIPE,
                     recipeId,
@@ -156,17 +155,13 @@ public class ConcereteMixerRecipe implements IConcereteMixerRecipe{
 
         @Override
         public void toNetwork(PacketBuffer buffer, ConcereteMixerRecipe recipe) {
-            // 1. Пишем группу
             buffer.writeUtf(recipe.getGroup());
 
-            // 2. Пишем ингредиенты
             recipe.ingredient.toNetwork(buffer);
             recipe.tingredient.toNetwork(buffer);
 
-            // 3. Пишем результат
             buffer.writeItem(recipe.getResultItem());
 
-            // 4. Пишем опыт и время
             buffer.writeFloat(recipe.getExperience());
             buffer.writeVarInt(recipe.getCookingTime());
         }

@@ -14,7 +14,7 @@ public class ModRecipeTypes {
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, NucRad.MOD_ID);
 
     public static final RegistryObject<ConcereteMixerRecipe.Serealazire> LIGHTNING_SERIALIZER
-            = RECIPE_SERIALIZER.register("lightning", ConcereteMixerRecipe.Serealazire::new);
+            = RECIPE_SERIALIZER.register("concrete_mixer", ConcereteMixerRecipe.Serealazire::new);
 
     public static IRecipeType<ConcereteMixerRecipe> LIGHTNING_RECIPE
             = new ConcereteMixerRecipe.ConcereteMixerRecipeType();

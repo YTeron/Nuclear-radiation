@@ -6,12 +6,11 @@
       "item": "minecraft:sand"
     },
     {
-      "item": "minecraft:water_bucket"
+      "item": "minecraft:sand"
     }
   ],
   "result": {
-    "item": "minecraft:concrete_powder",
-    "count": 1
+    "item": "minecraft:sand"
   },
   "experience": 0.35,
   "cookingtime": 200
