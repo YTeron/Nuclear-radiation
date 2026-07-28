@@ -42,9 +42,11 @@ public class ConcereteMixerRecipe implements IConcereteMixerRecipe{
 
         ItemStack slot0 = inv.getItem(0);
         ItemStack slot1 = inv.getItem(1);
-        boolean match1 = this.ingredient.test(slot0);
-        boolean match2 = this.tingredient.test(slot1);
-        return match1 && match2;
+        boolean match1 = this.ingredient.test(slot0) && this.tingredient.test(slot1);
+        boolean match2 = this.ingredient.test(slot1) && this.tingredient.test(slot0);
+        boolean match3 = this.ingredient.test(slot0) && slot1.isEmpty();;
+        boolean match4 = this.ingredient.test(slot1) && slot0.isEmpty();;
+        return match1 || match2||match3 || match4;
     }
 
     @Override

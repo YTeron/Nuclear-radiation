@@ -18,6 +18,7 @@ public class Modblock {
     public static final RegistryObject<Block> LAMP;
     public static final RegistryObject<Block> LIGHTNING_CHANNELER;
     public static final RegistryObject<Block> IRONFENCEE;
+    public static final RegistryObject<Block> CONCERETE_IRON_DEFEAT;
     public static final RegistryObject<Block> CONCERETE_MIXER;
     public static final RegistryObject<Block> DEAD_SAND;
     public static final RegistryObject<Block> DEAD_EARH;
@@ -34,6 +35,7 @@ public class Modblock {
         DEAD_EARH = REGISTRY.register("dead_earth",()-> new DeadEarth());
         CONCERETE_MIXER = REGISTRY.register("concrete_mixer",()-> new ConcereteMixer());
         CONCERETE_DEFEAT = REGISTRY.register("concerete_defeat",()-> new ConcereteDefeat());
+        CONCERETE_IRON_DEFEAT = REGISTRY.register("concerete_iron_defeat",()-> new ConcereteIronDefeat());
     }
 
     public static void register(IEventBus eventBus) {

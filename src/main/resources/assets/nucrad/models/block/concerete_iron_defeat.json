@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "nucrad:block/concerete_iron_defeat",
+    "down": "nucrad:block/concerete_iron_defeatupdown",
+    "up": "nucrad:block/concerete_iron_defeatupdown",
+    "north": "nucrad:block/concerete_iron_defeat",
+    "south": "nucrad:block/concerete_iron_defeat",
+    "east": "nucrad:block/concerete_iron_defeat",
+    "west": "nucrad:block/concerete_iron_defeat"
+  }
+}

@@ -3,16 +3,16 @@
   "group": "concrete_mixer",
   "ingredients": [
     {
-      "item": "minecraft:sand"
+      "item": "minecraft:iron_ingot"
     },
     {
       "item": "nucrad:a_sandconcerete"
     }
   ],
   "result": {
-    "item": "nucrad:concerete_defeat"
+    "item": "nucrad:concerete_iron_defeat"
 
   },
   "experience": 0.35,
-  "cookingtime": 200
+  "cookingtime": 100
 }

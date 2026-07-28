@@ -8,6 +8,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.yteron.nucrad.NucRad;
+import net.yteron.nucrad.block.block.IronFencee;
 import net.yteron.nucrad.entity.ModEntityTypes;
 
 public class ModItems {
@@ -23,6 +24,7 @@ public class ModItems {
     public static final RegistryObject<Item> LAMP;
     public static final RegistryObject<Item> CONCERETE_MIXER;
     public static final RegistryObject<Item> CONCERETE_DEFEAT;
+    public static final RegistryObject<Item> CONCERETE_IRON_DEFEAT;
     public static final RegistryObject<Item> DEAD_SAND;
     public static final RegistryObject<Item> DEAD_EARTH;
     public static final RegistryObject<Item> BUFF_ZOMBIE_SPAWN_EGG;
@@ -31,7 +33,7 @@ public class ModItems {
         // Точный порядок регистрации
         METALP = ITEMS.register("a_metalp",
                 () -> new Item(new Item.Properties().tab(ModTabs.NUCRAD)));
-        CONCP = ITEMS.register("a_concp",
+        CONCP = ITEMS.register("a_sandconcerete",
                 () -> new Item(new Item.Properties().tab(ModTabs.NUCRAD)));
         LIGHT = ITEMS.register("aaaaaa",
                 () -> new BlockItem(Modblock.LIGHTNING_CHANNELER.get(),
@@ -65,6 +67,9 @@ public class ModItems {
 
         CONCERETE_DEFEAT = ITEMS.register("concerete_defeat",
                 () -> new BlockItem(Modblock.CONCERETE_DEFEAT.get(),
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
+        CONCERETE_IRON_DEFEAT = ITEMS.register("concerete_iron_defeat",
+                () -> new BlockItem(Modblock.CONCERETE_IRON_DEFEAT.get(),
                         new Item.Properties().tab(ModTabs.NUCRAD)));
 
 
