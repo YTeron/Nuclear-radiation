@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "nucrad:block/radiation_barel"
+    },
+    "facing=south": {
+      "model": "nucrad:block/radiation_barel",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "nucrad:block/radiation_barel",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "nucrad:block/radiation_barel",
+      "y": 90
+    }
+  }
+}

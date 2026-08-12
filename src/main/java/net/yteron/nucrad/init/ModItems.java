@@ -1,5 +1,6 @@
 package net.yteron.nucrad.init;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
@@ -27,8 +28,10 @@ public class ModItems {
     public static final RegistryObject<Item> CONCERETE_IRON_DEFEAT;
     public static final RegistryObject<Item> DEAD_SAND;
     public static final RegistryObject<Item> DEAD_EARTH;
+    public static final RegistryObject<Item> CRUSHER;
     public static final RegistryObject<Item> BUFF_ZOMBIE_SPAWN_EGG;
     public static final RegistryObject<Item> LARGO;
+    public static final RegistryObject<Item> RADIATION_BAREL;
     static {
         // Точный порядок регистрации
         METALP = ITEMS.register("a_metalp",
@@ -54,6 +57,9 @@ public class ModItems {
         IRONFENCEE = ITEMS.register("ironfenceei",
                 () -> new BlockItem(Modblock.IRONFENCEE.get(),
                         new Item.Properties().tab(ModTabs.NUCRAD)));
+        RADIATION_BAREL = ITEMS.register("radiation_barel",
+                () -> new BlockItem(Modblock.RADIATION_BAREL.get(),
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
 
         DEAD_SAND = ITEMS.register("dead_sand",
                 () -> new BlockItem(Modblock.DEAD_SAND.get(),
@@ -63,6 +69,9 @@ public class ModItems {
                         new Item.Properties().tab(ModTabs.NUCRAD)));
         CONCERETE_MIXER = ITEMS.register("concrete_mixer",
                 () -> new BlockItem(Modblock.CONCERETE_MIXER.get(),
+                        new Item.Properties().tab(ModTabs.NUCRAD)));
+        CRUSHER = ITEMS.register("crusher",
+                () -> new BlockItem(Modblock.CRUSHER.get(),
                         new Item.Properties().tab(ModTabs.NUCRAD)));
 
         CONCERETE_DEFEAT = ITEMS.register("concerete_defeat",

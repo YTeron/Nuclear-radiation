@@ -8,6 +8,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.yteron.nucrad.NucRad;
 import net.yteron.nucrad.block.block.*;
 import net.yteron.nucrad.block.machine.ConcereteMixer;
+import net.yteron.nucrad.block.machine.Crusher;
 import net.yteron.nucrad.block.machine.LightningChannelerBlock;
 import net.yteron.nucrad.block.structurblock.Lamp;
 
@@ -20,9 +21,11 @@ public class Modblock {
     public static final RegistryObject<Block> IRONFENCEE;
     public static final RegistryObject<Block> CONCERETE_IRON_DEFEAT;
     public static final RegistryObject<Block> CONCERETE_MIXER;
+    public static final RegistryObject<Block> CRUSHER;
     public static final RegistryObject<Block> DEAD_SAND;
     public static final RegistryObject<Block> DEAD_EARH;
     public static final RegistryObject<Block> CONCERETE_DEFEAT;
+    public static final RegistryObject<Block> RADIATION_BAREL;
 
     static {
         REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, NucRad.MOD_ID);
@@ -36,6 +39,8 @@ public class Modblock {
         CONCERETE_MIXER = REGISTRY.register("concrete_mixer",()-> new ConcereteMixer());
         CONCERETE_DEFEAT = REGISTRY.register("concerete_defeat",()-> new ConcereteDefeat());
         CONCERETE_IRON_DEFEAT = REGISTRY.register("concerete_iron_defeat",()-> new ConcereteIronDefeat());
+        CRUSHER = REGISTRY.register("crusher",()-> new Crusher());
+        RADIATION_BAREL = REGISTRY.register("radiation_barel",()-> new RadiationBarel());
     }
 
     public static void register(IEventBus eventBus) {

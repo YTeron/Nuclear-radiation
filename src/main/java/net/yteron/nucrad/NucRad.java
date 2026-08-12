@@ -24,6 +24,7 @@ import net.yteron.nucrad.gui.init.ModScreens;
 import net.yteron.nucrad.gui.init.ModTileEntities;
 import net.yteron.nucrad.init.ModItems;
 import net.yteron.nucrad.init.Modblock;
+import net.yteron.nucrad.radiation.ChunkRaditonManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -45,6 +46,8 @@ public class NucRad
         ModTileEntities.register(eventBus);
         ModContainers.register(eventBus);
         ModRecipeTypes.register(eventBus);
+
+        MinecraftForge.EVENT_BUS.register(new ChunkRaditonManager());
 
         ModEntityTypes.register(eventBus);
         // Register the setup method for modloading

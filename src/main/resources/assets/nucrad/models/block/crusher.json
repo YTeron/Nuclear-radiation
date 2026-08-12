@@ -1,0 +1,12 @@
+{
+	"parent": "forge:block/default",
+	"loader": "forge:obj",
+	"model": "nucrad:models/block/crusher.obj",
+	"flip-v": true,
+	"textures":
+	{
+		"particle": "block/cobblestone",
+		"#m_e7258974-a33e-ab06-380f-647cc33bb97c": "nucrad:block/crusher"
+	},
+	"ambientocclusion": true
+}
