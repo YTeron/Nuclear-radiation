@@ -19,7 +19,7 @@ public abstract class ChunkRadiationHandler {
     public abstract void incrementRad(World world, int x, int y, int z, float rad);
     public abstract void decrementRad(World world, int x, int y, int z, float rad);
     public abstract void clearSystem(World world);
-
+    public abstract void handleWorldDestruction();
     /*
      * Proxy'd event handlers
      */
@@ -30,7 +30,6 @@ public abstract class ChunkRadiationHandler {
     public void receiveChunkLoad(ChunkDataEvent.Load event) { }
     public void receiveChunkSave(ChunkDataEvent.Save event) { }
     public void receiveChunkUnload(ChunkEvent.Unload event) { }
-
-    public void handleWorldDestruction() { }
+//    public void onPlayerTick(TickEvent.PlayerTickEvent event) {}
 
 }

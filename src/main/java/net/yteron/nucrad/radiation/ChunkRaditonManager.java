@@ -2,6 +2,7 @@ package net.yteron.nucrad.radiation;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.world.World;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityEvent;
@@ -18,13 +19,19 @@ import org.spongepowered.asm.mixin.MixinEnvironment;
 
 public class ChunkRaditonManager {
     public static ChunkRadiationHandler proxy = new ChunkRadiationHandlerSimple();
-    public static EntityRadiationHandler proxyY = new EntityRadiationHandlerSimple();
+    public static EntityRadiationHandler proxyY;
+    static {
+        // ✅ ПРАВИЛЬНО: передаем ChunkRadiationHandler
+        if (proxy instanceof ChunkRadiationHandlerSimple) {
+            proxyY = new EntityRadiationHandlerSimple((ChunkRadiationHandlerSimple) proxy);
+            System.out.println("✅ Обработчики инициализированы");
+        }
 
+    }
     @SubscribeEvent
     public void onWorldLoad(WorldEvent.Load event) {
         proxy.receiveWorldLoad(event);
     }
-
     @SubscribeEvent
     public void onWorldUnload(WorldEvent.Unload event) {
         proxy.receiveWorldUnload(event);
@@ -39,26 +46,28 @@ public class ChunkRaditonManager {
     public void onChunkSave(ChunkDataEvent.Save event) {
         proxy.receiveChunkSave(event);
     }
-
     @SubscribeEvent
     public void onChunkUnload(ChunkEvent.Unload event) {
         proxy.receiveChunkUnload(event);
     }
-    //-----------------------------
-    // присоединение иначе load
-    @SubscribeEvent
-    public void entityJoin(EntityJoinWorldEvent event) {proxyY.entityJoin(event); }
-    // save
-    @SubscribeEvent
-    public void entityLeave(EntityLeaveWorldEvent event){proxyY.entityLeave(event); }
-    //очистка
-    @SubscribeEvent
-    public void onEntityDeath(LivingDeathEvent event) {proxyY.onEntityDeath(event); }
+//    @SubscribeEvent
+//    public void onPlayerTickc(TickEvent.PlayerTickEvent event) {
+//        proxy.onPlayerTick(event);
+//    }
 
+    //----------------------------- Entity
     @SubscribeEvent
-    public void heartDamage(LivingHurtEvent event) {
-        proxyY.heartDamage(event);
+    public void onPlayerTick(TickEvent.PlayerTickEvent event) {proxyY.onPlayerTick(event);}
+    @SubscribeEvent
+    public void onEntityTick(TickEvent.ServerTickEvent event) {proxyY.onEntityTick(event);}
+    @SubscribeEvent
+    public void onEntityJoin(EntityJoinWorldEvent event) {proxyY.onEntityJoin(event);}
+    @SubscribeEvent
+    public void onEntityLeave(WorldEvent.Unload event) {
+        proxyY.onEntityLeave(event);
     }
+    @SubscribeEvent
+    public void onEntityDeath(LivingDeathEvent event) {proxyY.onEntityDeath(event);}
 
     int eggTimer = 0;
 
@@ -68,10 +77,10 @@ public class ChunkRaditonManager {
             eggTimer++;
             if (eggTimer >= 20) {
                 proxy.updateSystem();
-                proxy.handleWorldDestruction();
                 proxyY.updateSystem();
                 eggTimer = 0;
             }
+            proxy.handleWorldDestruction();
             proxy.receiveWorldTick(event);
         }
     }
